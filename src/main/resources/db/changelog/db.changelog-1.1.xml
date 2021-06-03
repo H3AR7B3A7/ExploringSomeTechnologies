@@ -4,6 +4,11 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
-    <include  file="db/changelog/db.changelog-1.0.xml"/>
-    <include  file="db/changelog/db.changelog-1.1.xml"/>
+    <changeSet  author="H3AR7B3A7"  id="changelog-1.0">
+        <addColumn schemaName="public" tableName="animals">
+            <column name="date" type="date">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>
