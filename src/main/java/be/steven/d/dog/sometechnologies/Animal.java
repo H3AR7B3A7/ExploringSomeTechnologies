@@ -1,6 +1,7 @@
 package be.steven.d.dog.sometechnologies;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "animals")
@@ -11,6 +12,7 @@ public class Animal {
     private Integer animalId;
     private String name;
     private String breed;
+    private LocalDate date;
 
     public Animal() {
     }
@@ -18,6 +20,13 @@ public class Animal {
     public Animal(String name, String breed) {
         this.name = name;
         this.breed = breed;
+        this.date = LocalDate.now();
+    }
+
+    public Animal(String name, String breed, LocalDate date) {
+        this.name = name;
+        this.breed = breed;
+        this.date = date;
     }
 
     public Integer getAnimalId() {
@@ -42,5 +51,13 @@ public class Animal {
 
     public void setBreed(String breed) {
         this.breed = breed;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 }

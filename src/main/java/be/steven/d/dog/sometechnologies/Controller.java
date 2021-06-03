@@ -1,12 +1,14 @@
 package be.steven.d.dog.sometechnologies;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
-@RequestMapping
+@RequestMapping("/animal")
 public class Controller {
 
     private final AnimalRepository animalRepository;
@@ -16,13 +18,20 @@ public class Controller {
         this.animalRepository = animalRepository;
     }
 
-    @PostMapping("animal")
-    public String createAnimal(@RequestParam String name, @RequestParam String breed) {
+    @PostMapping("/birth")
+    public String addAnimal(@RequestParam String name, @RequestParam String breed) {
         animalRepository.save(new Animal(name, breed));
-        return animalRepository.findByName(name).getName() + " was saved successfully!";
+        return animalRepository.findByName(name).getName() + " has been born!";
     }
 
-    @GetMapping("animal")
+    @PostMapping("add")
+    public String createAnimal(@RequestParam String name, @RequestParam String breed, @RequestParam
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
+        animalRepository.save(new Animal(name, breed, date));
+        return animalRepository.findByName(name).getName() + " was added to zoo successfully on: " + date + "!";
+    }
+
+    @GetMapping
     public List<Animal> getAnimals() {
         return animalRepository.findAll();
     }
