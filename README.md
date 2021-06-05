@@ -1,6 +1,6 @@
 # Some Technologies
 
-I created this project to document on- and familiarize myself with different technologies.
+This project was created to document various technologies and familiarize myself with them.
 
 
 ## Liquibase
@@ -66,6 +66,9 @@ Furthermore, Feign makes it easy to unit test your conversions knowing this.
 
 ## Spring Events
 
+Spring application events allow us to throw and listen to specific application events that we can process as we wish.
+Events are meant for exchanging information between loosely coupled components. As there is no direct coupling between
+publishers and subscribers, it enables us to modify subscribers without affecting the publishers and vice-versa.
 
 
 ---
