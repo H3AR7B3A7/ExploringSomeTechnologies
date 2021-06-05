@@ -1,6 +1,6 @@
 # Some Technologies
 
-This project was created to document various technologies and familiarize myself with them.
+This project was created to explore various technologies and familiarize myself with them.
 
 
 ## Liquibase
