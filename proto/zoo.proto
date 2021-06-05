@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package steven;
+
+option java_package = "be.steven.d.dog.sometechnologies.zoo";
+option java_multiple_files = true;
+
+message Keeper {
+  string name = 1;
+  enum Role {
+    Manager = 0;
+    Biologist = 1;
+    Feeder = 2;
+    HR = 3;
+    Technical = 4;
+  }
+  Role role = 2;
+}
+
+message Habitat {
+  string name = 1;
+  int32 crew = 2;
+  string cargo = 3;
+}
+
+message Zoo {
+  Keeper manager = 1;
+  repeated Habitat habitats = 2;
+}
