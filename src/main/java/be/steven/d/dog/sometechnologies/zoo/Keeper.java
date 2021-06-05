@@ -16,8 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Keeper() {
-    name_ = "";
-    role_ = 0;
+    keeperName_ = "";
+    keeperRole_ = 0;
   }
 
   @java.lang.Override
@@ -53,13 +53,13 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
+            keeperName_ = s;
             break;
           }
           case 16: {
             int rawValue = input.readEnum();
 
-            role_ = rawValue;
+            keeperRole_ = rawValue;
             break;
           }
           default: {
@@ -229,60 +229,60 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:steven.Keeper.Role)
   }
 
-  public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+  public static final int KEEPERNAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object keeperName_;
   /**
-   * <code>string name = 1;</code>
-   * @return The name.
+   * <code>string keeperName = 1;</code>
+   * @return The keeperName.
    */
   @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
+  public java.lang.String getKeeperName() {
+    java.lang.Object ref = keeperName_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      name_ = s;
+      keeperName_ = s;
       return s;
     }
   }
   /**
-   * <code>string name = 1;</code>
-   * @return The bytes for name.
+   * <code>string keeperName = 1;</code>
+   * @return The bytes for keeperName.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
+      getKeeperNameBytes() {
+    java.lang.Object ref = keeperName_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      name_ = b;
+      keeperName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int ROLE_FIELD_NUMBER = 2;
-  private int role_;
+  public static final int KEEPERROLE_FIELD_NUMBER = 2;
+  private int keeperRole_;
   /**
-   * <code>.steven.Keeper.Role role = 2;</code>
-   * @return The enum numeric value on the wire for role.
+   * <code>.steven.Keeper.Role keeperRole = 2;</code>
+   * @return The enum numeric value on the wire for keeperRole.
    */
-  @java.lang.Override public int getRoleValue() {
-    return role_;
+  @java.lang.Override public int getKeeperRoleValue() {
+    return keeperRole_;
   }
   /**
-   * <code>.steven.Keeper.Role role = 2;</code>
-   * @return The role.
+   * <code>.steven.Keeper.Role keeperRole = 2;</code>
+   * @return The keeperRole.
    */
-  @java.lang.Override public be.steven.d.dog.sometechnologies.zoo.Keeper.Role getRole() {
+  @java.lang.Override public be.steven.d.dog.sometechnologies.zoo.Keeper.Role getKeeperRole() {
     @SuppressWarnings("deprecation")
-    be.steven.d.dog.sometechnologies.zoo.Keeper.Role result = be.steven.d.dog.sometechnologies.zoo.Keeper.Role.valueOf(role_);
+    be.steven.d.dog.sometechnologies.zoo.Keeper.Role result = be.steven.d.dog.sometechnologies.zoo.Keeper.Role.valueOf(keeperRole_);
     return result == null ? be.steven.d.dog.sometechnologies.zoo.Keeper.Role.UNRECOGNIZED : result;
   }
 
@@ -300,11 +300,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    if (!getKeeperNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, keeperName_);
     }
-    if (role_ != be.steven.d.dog.sometechnologies.zoo.Keeper.Role.Manager.getNumber()) {
-      output.writeEnum(2, role_);
+    if (keeperRole_ != be.steven.d.dog.sometechnologies.zoo.Keeper.Role.Manager.getNumber()) {
+      output.writeEnum(2, keeperRole_);
     }
     unknownFields.writeTo(output);
   }
@@ -315,12 +315,12 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    if (!getKeeperNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, keeperName_);
     }
-    if (role_ != be.steven.d.dog.sometechnologies.zoo.Keeper.Role.Manager.getNumber()) {
+    if (keeperRole_ != be.steven.d.dog.sometechnologies.zoo.Keeper.Role.Manager.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(2, role_);
+        .computeEnumSize(2, keeperRole_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -337,9 +337,9 @@ private static final long serialVersionUID = 0L;
     }
     be.steven.d.dog.sometechnologies.zoo.Keeper other = (be.steven.d.dog.sometechnologies.zoo.Keeper) obj;
 
-    if (!getName()
-        .equals(other.getName())) return false;
-    if (role_ != other.role_) return false;
+    if (!getKeeperName()
+        .equals(other.getKeeperName())) return false;
+    if (keeperRole_ != other.keeperRole_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -351,10 +351,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + ROLE_FIELD_NUMBER;
-    hash = (53 * hash) + role_;
+    hash = (37 * hash) + KEEPERNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getKeeperName().hashCode();
+    hash = (37 * hash) + KEEPERROLE_FIELD_NUMBER;
+    hash = (53 * hash) + keeperRole_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -488,9 +488,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      name_ = "";
+      keeperName_ = "";
 
-      role_ = 0;
+      keeperRole_ = 0;
 
       return this;
     }
@@ -518,8 +518,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public be.steven.d.dog.sometechnologies.zoo.Keeper buildPartial() {
       be.steven.d.dog.sometechnologies.zoo.Keeper result = new be.steven.d.dog.sometechnologies.zoo.Keeper(this);
-      result.name_ = name_;
-      result.role_ = role_;
+      result.keeperName_ = keeperName_;
+      result.keeperRole_ = keeperRole_;
       onBuilt();
       return result;
     }
@@ -568,12 +568,12 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(be.steven.d.dog.sometechnologies.zoo.Keeper other) {
       if (other == be.steven.d.dog.sometechnologies.zoo.Keeper.getDefaultInstance()) return this;
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
+      if (!other.getKeeperName().isEmpty()) {
+        keeperName_ = other.keeperName_;
         onChanged();
       }
-      if (other.role_ != 0) {
-        setRoleValue(other.getRoleValue());
+      if (other.keeperRole_ != 0) {
+        setKeeperRoleValue(other.getKeeperRoleValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -604,132 +604,132 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object name_ = "";
+    private java.lang.Object keeperName_ = "";
     /**
-     * <code>string name = 1;</code>
-     * @return The name.
+     * <code>string keeperName = 1;</code>
+     * @return The keeperName.
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getKeeperName() {
+      java.lang.Object ref = keeperName_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        keeperName_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string name = 1;</code>
-     * @return The bytes for name.
+     * <code>string keeperName = 1;</code>
+     * @return The bytes for keeperName.
      */
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
+        getKeeperNameBytes() {
+      java.lang.Object ref = keeperName_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name_ = b;
+        keeperName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string name = 1;</code>
-     * @param value The name to set.
+     * <code>string keeperName = 1;</code>
+     * @param value The keeperName to set.
      * @return This builder for chaining.
      */
-    public Builder setName(
+    public Builder setKeeperName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      name_ = value;
+      keeperName_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string name = 1;</code>
+     * <code>string keeperName = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearName() {
+    public Builder clearKeeperName() {
       
-      name_ = getDefaultInstance().getName();
+      keeperName_ = getDefaultInstance().getKeeperName();
       onChanged();
       return this;
     }
     /**
-     * <code>string name = 1;</code>
-     * @param value The bytes for name to set.
+     * <code>string keeperName = 1;</code>
+     * @param value The bytes for keeperName to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(
+    public Builder setKeeperNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      name_ = value;
+      keeperName_ = value;
       onChanged();
       return this;
     }
 
-    private int role_ = 0;
+    private int keeperRole_ = 0;
     /**
-     * <code>.steven.Keeper.Role role = 2;</code>
-     * @return The enum numeric value on the wire for role.
+     * <code>.steven.Keeper.Role keeperRole = 2;</code>
+     * @return The enum numeric value on the wire for keeperRole.
      */
-    @java.lang.Override public int getRoleValue() {
-      return role_;
+    @java.lang.Override public int getKeeperRoleValue() {
+      return keeperRole_;
     }
     /**
-     * <code>.steven.Keeper.Role role = 2;</code>
-     * @param value The enum numeric value on the wire for role to set.
+     * <code>.steven.Keeper.Role keeperRole = 2;</code>
+     * @param value The enum numeric value on the wire for keeperRole to set.
      * @return This builder for chaining.
      */
-    public Builder setRoleValue(int value) {
+    public Builder setKeeperRoleValue(int value) {
       
-      role_ = value;
+      keeperRole_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>.steven.Keeper.Role role = 2;</code>
-     * @return The role.
+     * <code>.steven.Keeper.Role keeperRole = 2;</code>
+     * @return The keeperRole.
      */
     @java.lang.Override
-    public be.steven.d.dog.sometechnologies.zoo.Keeper.Role getRole() {
+    public be.steven.d.dog.sometechnologies.zoo.Keeper.Role getKeeperRole() {
       @SuppressWarnings("deprecation")
-      be.steven.d.dog.sometechnologies.zoo.Keeper.Role result = be.steven.d.dog.sometechnologies.zoo.Keeper.Role.valueOf(role_);
+      be.steven.d.dog.sometechnologies.zoo.Keeper.Role result = be.steven.d.dog.sometechnologies.zoo.Keeper.Role.valueOf(keeperRole_);
       return result == null ? be.steven.d.dog.sometechnologies.zoo.Keeper.Role.UNRECOGNIZED : result;
     }
     /**
-     * <code>.steven.Keeper.Role role = 2;</code>
-     * @param value The role to set.
+     * <code>.steven.Keeper.Role keeperRole = 2;</code>
+     * @param value The keeperRole to set.
      * @return This builder for chaining.
      */
-    public Builder setRole(be.steven.d.dog.sometechnologies.zoo.Keeper.Role value) {
+    public Builder setKeeperRole(be.steven.d.dog.sometechnologies.zoo.Keeper.Role value) {
       if (value == null) {
         throw new NullPointerException();
       }
       
-      role_ = value.getNumber();
+      keeperRole_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>.steven.Keeper.Role role = 2;</code>
+     * <code>.steven.Keeper.Role keeperRole = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearRole() {
+    public Builder clearKeeperRole() {
       
-      role_ = 0;
+      keeperRole_ = 0;
       onChanged();
       return this;
     }

@@ -6,7 +6,7 @@ option java_package = "be.steven.d.dog.sometechnologies.zoo";
 option java_multiple_files = true;
 
 message Keeper {
-  string name = 1;
+  string keeperName = 1;
   enum Role {
     Manager = 0;
     Biologist = 1;
@@ -14,13 +14,14 @@ message Keeper {
     HR = 3;
     Technical = 4;
   }
-  Role role = 2;
+  Role keeperRole = 2;
 }
 
 message Habitat {
-  string name = 1;
-  int32 crew = 2;
-  string cargo = 3;
+  string habitatName = 1;
+  repeated Keeper keepers = 2;
+  int32 numberOfAnimals = 3;
+  string food = 4;
 }
 
 message Zoo {

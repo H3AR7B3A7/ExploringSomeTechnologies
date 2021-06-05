@@ -16,8 +16,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Habitat() {
-    name_ = "";
-    cargo_ = "";
+    habitatName_ = "";
+    keepers_ = java.util.Collections.emptyList();
+    food_ = "";
   }
 
   @java.lang.Override
@@ -40,6 +41,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -53,18 +55,27 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
+            habitatName_ = s;
             break;
           }
-          case 16: {
+          case 18: {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              keepers_ = new java.util.ArrayList<be.steven.d.dog.sometechnologies.zoo.Keeper>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            keepers_.add(
+                input.readMessage(be.steven.d.dog.sometechnologies.zoo.Keeper.parser(), extensionRegistry));
+            break;
+          }
+          case 24: {
 
-            crew_ = input.readInt32();
+            numberOfAnimals_ = input.readInt32();
             break;
           }
-          case 26: {
+          case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            cargo_ = s;
+            food_ = s;
             break;
           }
           default: {
@@ -82,6 +93,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        keepers_ = java.util.Collections.unmodifiableList(keepers_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -99,87 +113,127 @@ private static final long serialVersionUID = 0L;
             be.steven.d.dog.sometechnologies.zoo.Habitat.class, be.steven.d.dog.sometechnologies.zoo.Habitat.Builder.class);
   }
 
-  public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+  public static final int HABITATNAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object habitatName_;
   /**
-   * <code>string name = 1;</code>
-   * @return The name.
+   * <code>string habitatName = 1;</code>
+   * @return The habitatName.
    */
   @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
+  public java.lang.String getHabitatName() {
+    java.lang.Object ref = habitatName_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      name_ = s;
+      habitatName_ = s;
       return s;
     }
   }
   /**
-   * <code>string name = 1;</code>
-   * @return The bytes for name.
+   * <code>string habitatName = 1;</code>
+   * @return The bytes for habitatName.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
+      getHabitatNameBytes() {
+    java.lang.Object ref = habitatName_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      name_ = b;
+      habitatName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int CREW_FIELD_NUMBER = 2;
-  private int crew_;
+  public static final int KEEPERS_FIELD_NUMBER = 2;
+  private java.util.List<be.steven.d.dog.sometechnologies.zoo.Keeper> keepers_;
   /**
-   * <code>int32 crew = 2;</code>
-   * @return The crew.
+   * <code>repeated .steven.Keeper keepers = 2;</code>
    */
   @java.lang.Override
-  public int getCrew() {
-    return crew_;
+  public java.util.List<be.steven.d.dog.sometechnologies.zoo.Keeper> getKeepersList() {
+    return keepers_;
+  }
+  /**
+   * <code>repeated .steven.Keeper keepers = 2;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends be.steven.d.dog.sometechnologies.zoo.KeeperOrBuilder> 
+      getKeepersOrBuilderList() {
+    return keepers_;
+  }
+  /**
+   * <code>repeated .steven.Keeper keepers = 2;</code>
+   */
+  @java.lang.Override
+  public int getKeepersCount() {
+    return keepers_.size();
+  }
+  /**
+   * <code>repeated .steven.Keeper keepers = 2;</code>
+   */
+  @java.lang.Override
+  public be.steven.d.dog.sometechnologies.zoo.Keeper getKeepers(int index) {
+    return keepers_.get(index);
+  }
+  /**
+   * <code>repeated .steven.Keeper keepers = 2;</code>
+   */
+  @java.lang.Override
+  public be.steven.d.dog.sometechnologies.zoo.KeeperOrBuilder getKeepersOrBuilder(
+      int index) {
+    return keepers_.get(index);
   }
 
-  public static final int CARGO_FIELD_NUMBER = 3;
-  private volatile java.lang.Object cargo_;
+  public static final int NUMBEROFANIMALS_FIELD_NUMBER = 3;
+  private int numberOfAnimals_;
   /**
-   * <code>string cargo = 3;</code>
-   * @return The cargo.
+   * <code>int32 numberOfAnimals = 3;</code>
+   * @return The numberOfAnimals.
    */
   @java.lang.Override
-  public java.lang.String getCargo() {
-    java.lang.Object ref = cargo_;
+  public int getNumberOfAnimals() {
+    return numberOfAnimals_;
+  }
+
+  public static final int FOOD_FIELD_NUMBER = 4;
+  private volatile java.lang.Object food_;
+  /**
+   * <code>string food = 4;</code>
+   * @return The food.
+   */
+  @java.lang.Override
+  public java.lang.String getFood() {
+    java.lang.Object ref = food_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      cargo_ = s;
+      food_ = s;
       return s;
     }
   }
   /**
-   * <code>string cargo = 3;</code>
-   * @return The bytes for cargo.
+   * <code>string food = 4;</code>
+   * @return The bytes for food.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getCargoBytes() {
-    java.lang.Object ref = cargo_;
+      getFoodBytes() {
+    java.lang.Object ref = food_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      cargo_ = b;
+      food_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -200,14 +254,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    if (!getHabitatNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, habitatName_);
     }
-    if (crew_ != 0) {
-      output.writeInt32(2, crew_);
+    for (int i = 0; i < keepers_.size(); i++) {
+      output.writeMessage(2, keepers_.get(i));
     }
-    if (!getCargoBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, cargo_);
+    if (numberOfAnimals_ != 0) {
+      output.writeInt32(3, numberOfAnimals_);
+    }
+    if (!getFoodBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, food_);
     }
     unknownFields.writeTo(output);
   }
@@ -218,15 +275,19 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    if (!getHabitatNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, habitatName_);
     }
-    if (crew_ != 0) {
+    for (int i = 0; i < keepers_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, crew_);
+        .computeMessageSize(2, keepers_.get(i));
     }
-    if (!getCargoBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, cargo_);
+    if (numberOfAnimals_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(3, numberOfAnimals_);
+    }
+    if (!getFoodBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, food_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -243,12 +304,14 @@ private static final long serialVersionUID = 0L;
     }
     be.steven.d.dog.sometechnologies.zoo.Habitat other = (be.steven.d.dog.sometechnologies.zoo.Habitat) obj;
 
-    if (!getName()
-        .equals(other.getName())) return false;
-    if (getCrew()
-        != other.getCrew()) return false;
-    if (!getCargo()
-        .equals(other.getCargo())) return false;
+    if (!getHabitatName()
+        .equals(other.getHabitatName())) return false;
+    if (!getKeepersList()
+        .equals(other.getKeepersList())) return false;
+    if (getNumberOfAnimals()
+        != other.getNumberOfAnimals()) return false;
+    if (!getFood()
+        .equals(other.getFood())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -260,12 +323,16 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + CREW_FIELD_NUMBER;
-    hash = (53 * hash) + getCrew();
-    hash = (37 * hash) + CARGO_FIELD_NUMBER;
-    hash = (53 * hash) + getCargo().hashCode();
+    hash = (37 * hash) + HABITATNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getHabitatName().hashCode();
+    if (getKeepersCount() > 0) {
+      hash = (37 * hash) + KEEPERS_FIELD_NUMBER;
+      hash = (53 * hash) + getKeepersList().hashCode();
+    }
+    hash = (37 * hash) + NUMBEROFANIMALS_FIELD_NUMBER;
+    hash = (53 * hash) + getNumberOfAnimals();
+    hash = (37 * hash) + FOOD_FIELD_NUMBER;
+    hash = (53 * hash) + getFood().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -394,16 +461,23 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getKeepersFieldBuilder();
       }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      name_ = "";
+      habitatName_ = "";
 
-      crew_ = 0;
+      if (keepersBuilder_ == null) {
+        keepers_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        keepersBuilder_.clear();
+      }
+      numberOfAnimals_ = 0;
 
-      cargo_ = "";
+      food_ = "";
 
       return this;
     }
@@ -431,9 +505,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public be.steven.d.dog.sometechnologies.zoo.Habitat buildPartial() {
       be.steven.d.dog.sometechnologies.zoo.Habitat result = new be.steven.d.dog.sometechnologies.zoo.Habitat(this);
-      result.name_ = name_;
-      result.crew_ = crew_;
-      result.cargo_ = cargo_;
+      int from_bitField0_ = bitField0_;
+      result.habitatName_ = habitatName_;
+      if (keepersBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          keepers_ = java.util.Collections.unmodifiableList(keepers_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.keepers_ = keepers_;
+      } else {
+        result.keepers_ = keepersBuilder_.build();
+      }
+      result.numberOfAnimals_ = numberOfAnimals_;
+      result.food_ = food_;
       onBuilt();
       return result;
     }
@@ -482,15 +566,41 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(be.steven.d.dog.sometechnologies.zoo.Habitat other) {
       if (other == be.steven.d.dog.sometechnologies.zoo.Habitat.getDefaultInstance()) return this;
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
+      if (!other.getHabitatName().isEmpty()) {
+        habitatName_ = other.habitatName_;
         onChanged();
       }
-      if (other.getCrew() != 0) {
-        setCrew(other.getCrew());
+      if (keepersBuilder_ == null) {
+        if (!other.keepers_.isEmpty()) {
+          if (keepers_.isEmpty()) {
+            keepers_ = other.keepers_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureKeepersIsMutable();
+            keepers_.addAll(other.keepers_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.keepers_.isEmpty()) {
+          if (keepersBuilder_.isEmpty()) {
+            keepersBuilder_.dispose();
+            keepersBuilder_ = null;
+            keepers_ = other.keepers_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            keepersBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getKeepersFieldBuilder() : null;
+          } else {
+            keepersBuilder_.addAllMessages(other.keepers_);
+          }
+        }
       }
-      if (!other.getCargo().isEmpty()) {
-        cargo_ = other.cargo_;
+      if (other.getNumberOfAnimals() != 0) {
+        setNumberOfAnimals(other.getNumberOfAnimals());
+      }
+      if (!other.getFood().isEmpty()) {
+        food_ = other.food_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -521,186 +631,427 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
-    private java.lang.Object name_ = "";
+    private java.lang.Object habitatName_ = "";
     /**
-     * <code>string name = 1;</code>
-     * @return The name.
+     * <code>string habitatName = 1;</code>
+     * @return The habitatName.
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getHabitatName() {
+      java.lang.Object ref = habitatName_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        habitatName_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string name = 1;</code>
-     * @return The bytes for name.
+     * <code>string habitatName = 1;</code>
+     * @return The bytes for habitatName.
      */
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
+        getHabitatNameBytes() {
+      java.lang.Object ref = habitatName_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name_ = b;
+        habitatName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string name = 1;</code>
-     * @param value The name to set.
+     * <code>string habitatName = 1;</code>
+     * @param value The habitatName to set.
      * @return This builder for chaining.
      */
-    public Builder setName(
+    public Builder setHabitatName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      name_ = value;
+      habitatName_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string name = 1;</code>
+     * <code>string habitatName = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearName() {
+    public Builder clearHabitatName() {
       
-      name_ = getDefaultInstance().getName();
+      habitatName_ = getDefaultInstance().getHabitatName();
       onChanged();
       return this;
     }
     /**
-     * <code>string name = 1;</code>
-     * @param value The bytes for name to set.
+     * <code>string habitatName = 1;</code>
+     * @param value The bytes for habitatName to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(
+    public Builder setHabitatNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      name_ = value;
+      habitatName_ = value;
       onChanged();
       return this;
     }
 
-    private int crew_ ;
+    private java.util.List<be.steven.d.dog.sometechnologies.zoo.Keeper> keepers_ =
+      java.util.Collections.emptyList();
+    private void ensureKeepersIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        keepers_ = new java.util.ArrayList<be.steven.d.dog.sometechnologies.zoo.Keeper>(keepers_);
+        bitField0_ |= 0x00000001;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        be.steven.d.dog.sometechnologies.zoo.Keeper, be.steven.d.dog.sometechnologies.zoo.Keeper.Builder, be.steven.d.dog.sometechnologies.zoo.KeeperOrBuilder> keepersBuilder_;
+
     /**
-     * <code>int32 crew = 2;</code>
-     * @return The crew.
+     * <code>repeated .steven.Keeper keepers = 2;</code>
+     */
+    public java.util.List<be.steven.d.dog.sometechnologies.zoo.Keeper> getKeepersList() {
+      if (keepersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(keepers_);
+      } else {
+        return keepersBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .steven.Keeper keepers = 2;</code>
+     */
+    public int getKeepersCount() {
+      if (keepersBuilder_ == null) {
+        return keepers_.size();
+      } else {
+        return keepersBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .steven.Keeper keepers = 2;</code>
+     */
+    public be.steven.d.dog.sometechnologies.zoo.Keeper getKeepers(int index) {
+      if (keepersBuilder_ == null) {
+        return keepers_.get(index);
+      } else {
+        return keepersBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .steven.Keeper keepers = 2;</code>
+     */
+    public Builder setKeepers(
+        int index, be.steven.d.dog.sometechnologies.zoo.Keeper value) {
+      if (keepersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureKeepersIsMutable();
+        keepers_.set(index, value);
+        onChanged();
+      } else {
+        keepersBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .steven.Keeper keepers = 2;</code>
+     */
+    public Builder setKeepers(
+        int index, be.steven.d.dog.sometechnologies.zoo.Keeper.Builder builderForValue) {
+      if (keepersBuilder_ == null) {
+        ensureKeepersIsMutable();
+        keepers_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        keepersBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .steven.Keeper keepers = 2;</code>
+     */
+    public Builder addKeepers(be.steven.d.dog.sometechnologies.zoo.Keeper value) {
+      if (keepersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureKeepersIsMutable();
+        keepers_.add(value);
+        onChanged();
+      } else {
+        keepersBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .steven.Keeper keepers = 2;</code>
+     */
+    public Builder addKeepers(
+        int index, be.steven.d.dog.sometechnologies.zoo.Keeper value) {
+      if (keepersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureKeepersIsMutable();
+        keepers_.add(index, value);
+        onChanged();
+      } else {
+        keepersBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .steven.Keeper keepers = 2;</code>
+     */
+    public Builder addKeepers(
+        be.steven.d.dog.sometechnologies.zoo.Keeper.Builder builderForValue) {
+      if (keepersBuilder_ == null) {
+        ensureKeepersIsMutable();
+        keepers_.add(builderForValue.build());
+        onChanged();
+      } else {
+        keepersBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .steven.Keeper keepers = 2;</code>
+     */
+    public Builder addKeepers(
+        int index, be.steven.d.dog.sometechnologies.zoo.Keeper.Builder builderForValue) {
+      if (keepersBuilder_ == null) {
+        ensureKeepersIsMutable();
+        keepers_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        keepersBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .steven.Keeper keepers = 2;</code>
+     */
+    public Builder addAllKeepers(
+        java.lang.Iterable<? extends be.steven.d.dog.sometechnologies.zoo.Keeper> values) {
+      if (keepersBuilder_ == null) {
+        ensureKeepersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, keepers_);
+        onChanged();
+      } else {
+        keepersBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .steven.Keeper keepers = 2;</code>
+     */
+    public Builder clearKeepers() {
+      if (keepersBuilder_ == null) {
+        keepers_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        keepersBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .steven.Keeper keepers = 2;</code>
+     */
+    public Builder removeKeepers(int index) {
+      if (keepersBuilder_ == null) {
+        ensureKeepersIsMutable();
+        keepers_.remove(index);
+        onChanged();
+      } else {
+        keepersBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .steven.Keeper keepers = 2;</code>
+     */
+    public be.steven.d.dog.sometechnologies.zoo.Keeper.Builder getKeepersBuilder(
+        int index) {
+      return getKeepersFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .steven.Keeper keepers = 2;</code>
+     */
+    public be.steven.d.dog.sometechnologies.zoo.KeeperOrBuilder getKeepersOrBuilder(
+        int index) {
+      if (keepersBuilder_ == null) {
+        return keepers_.get(index);  } else {
+        return keepersBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .steven.Keeper keepers = 2;</code>
+     */
+    public java.util.List<? extends be.steven.d.dog.sometechnologies.zoo.KeeperOrBuilder> 
+         getKeepersOrBuilderList() {
+      if (keepersBuilder_ != null) {
+        return keepersBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(keepers_);
+      }
+    }
+    /**
+     * <code>repeated .steven.Keeper keepers = 2;</code>
+     */
+    public be.steven.d.dog.sometechnologies.zoo.Keeper.Builder addKeepersBuilder() {
+      return getKeepersFieldBuilder().addBuilder(
+          be.steven.d.dog.sometechnologies.zoo.Keeper.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .steven.Keeper keepers = 2;</code>
+     */
+    public be.steven.d.dog.sometechnologies.zoo.Keeper.Builder addKeepersBuilder(
+        int index) {
+      return getKeepersFieldBuilder().addBuilder(
+          index, be.steven.d.dog.sometechnologies.zoo.Keeper.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .steven.Keeper keepers = 2;</code>
+     */
+    public java.util.List<be.steven.d.dog.sometechnologies.zoo.Keeper.Builder> 
+         getKeepersBuilderList() {
+      return getKeepersFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        be.steven.d.dog.sometechnologies.zoo.Keeper, be.steven.d.dog.sometechnologies.zoo.Keeper.Builder, be.steven.d.dog.sometechnologies.zoo.KeeperOrBuilder> 
+        getKeepersFieldBuilder() {
+      if (keepersBuilder_ == null) {
+        keepersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            be.steven.d.dog.sometechnologies.zoo.Keeper, be.steven.d.dog.sometechnologies.zoo.Keeper.Builder, be.steven.d.dog.sometechnologies.zoo.KeeperOrBuilder>(
+                keepers_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        keepers_ = null;
+      }
+      return keepersBuilder_;
+    }
+
+    private int numberOfAnimals_ ;
+    /**
+     * <code>int32 numberOfAnimals = 3;</code>
+     * @return The numberOfAnimals.
      */
     @java.lang.Override
-    public int getCrew() {
-      return crew_;
+    public int getNumberOfAnimals() {
+      return numberOfAnimals_;
     }
     /**
-     * <code>int32 crew = 2;</code>
-     * @param value The crew to set.
+     * <code>int32 numberOfAnimals = 3;</code>
+     * @param value The numberOfAnimals to set.
      * @return This builder for chaining.
      */
-    public Builder setCrew(int value) {
+    public Builder setNumberOfAnimals(int value) {
       
-      crew_ = value;
+      numberOfAnimals_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 crew = 2;</code>
+     * <code>int32 numberOfAnimals = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearCrew() {
+    public Builder clearNumberOfAnimals() {
       
-      crew_ = 0;
+      numberOfAnimals_ = 0;
       onChanged();
       return this;
     }
 
-    private java.lang.Object cargo_ = "";
+    private java.lang.Object food_ = "";
     /**
-     * <code>string cargo = 3;</code>
-     * @return The cargo.
+     * <code>string food = 4;</code>
+     * @return The food.
      */
-    public java.lang.String getCargo() {
-      java.lang.Object ref = cargo_;
+    public java.lang.String getFood() {
+      java.lang.Object ref = food_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        cargo_ = s;
+        food_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string cargo = 3;</code>
-     * @return The bytes for cargo.
+     * <code>string food = 4;</code>
+     * @return The bytes for food.
      */
     public com.google.protobuf.ByteString
-        getCargoBytes() {
-      java.lang.Object ref = cargo_;
+        getFoodBytes() {
+      java.lang.Object ref = food_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        cargo_ = b;
+        food_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string cargo = 3;</code>
-     * @param value The cargo to set.
+     * <code>string food = 4;</code>
+     * @param value The food to set.
      * @return This builder for chaining.
      */
-    public Builder setCargo(
+    public Builder setFood(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      cargo_ = value;
+      food_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string cargo = 3;</code>
+     * <code>string food = 4;</code>
      * @return This builder for chaining.
      */
-    public Builder clearCargo() {
+    public Builder clearFood() {
       
-      cargo_ = getDefaultInstance().getCargo();
+      food_ = getDefaultInstance().getFood();
       onChanged();
       return this;
     }
     /**
-     * <code>string cargo = 3;</code>
-     * @param value The bytes for cargo to set.
+     * <code>string food = 4;</code>
+     * @param value The bytes for food to set.
      * @return This builder for chaining.
      */
-    public Builder setCargoBytes(
+    public Builder setFoodBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      cargo_ = value;
+      food_ = value;
       onChanged();
       return this;
     }

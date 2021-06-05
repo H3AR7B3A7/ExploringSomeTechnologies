@@ -38,15 +38,16 @@ public final class ZooOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\tzoo.proto\022\006steven\"\200\001\n\006Keeper\022\014\n\004name\030\001" +
-      " \001(\t\022!\n\004role\030\002 \001(\0162\023.steven.Keeper.Role\"" +
-      "E\n\004Role\022\013\n\007Manager\020\000\022\r\n\tBiologist\020\001\022\n\n\006F" +
-      "eeder\020\002\022\006\n\002HR\020\003\022\r\n\tTechnical\020\004\"4\n\007Habita" +
-      "t\022\014\n\004name\030\001 \001(\t\022\014\n\004crew\030\002 \001(\005\022\r\n\005cargo\030\003" +
-      " \001(\t\"I\n\003Zoo\022\037\n\007manager\030\001 \001(\0132\016.steven.Ke" +
-      "eper\022!\n\010habitats\030\002 \003(\0132\017.steven.HabitatB" +
-      "(\n$be.steven.d.dog.sometechnologies.zooP" +
-      "\001b\006proto3"
+      "\n\tzoo.proto\022\006steven\"\214\001\n\006Keeper\022\022\n\nkeeper" +
+      "Name\030\001 \001(\t\022\'\n\nkeeperRole\030\002 \001(\0162\023.steven." +
+      "Keeper.Role\"E\n\004Role\022\013\n\007Manager\020\000\022\r\n\tBiol" +
+      "ogist\020\001\022\n\n\006Feeder\020\002\022\006\n\002HR\020\003\022\r\n\tTechnical" +
+      "\020\004\"f\n\007Habitat\022\023\n\013habitatName\030\001 \001(\t\022\037\n\007ke" +
+      "epers\030\002 \003(\0132\016.steven.Keeper\022\027\n\017numberOfA" +
+      "nimals\030\003 \001(\005\022\014\n\004food\030\004 \001(\t\"I\n\003Zoo\022\037\n\007man" +
+      "ager\030\001 \001(\0132\016.steven.Keeper\022!\n\010habitats\030\002" +
+      " \003(\0132\017.steven.HabitatB(\n$be.steven.d.dog" +
+      ".sometechnologies.zooP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -57,13 +58,13 @@ public final class ZooOuterClass {
     internal_static_steven_Keeper_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_steven_Keeper_descriptor,
-        new java.lang.String[] { "Name", "Role", });
+        new java.lang.String[] { "KeeperName", "KeeperRole", });
     internal_static_steven_Habitat_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_steven_Habitat_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_steven_Habitat_descriptor,
-        new java.lang.String[] { "Name", "Crew", "Cargo", });
+        new java.lang.String[] { "HabitatName", "Keepers", "NumberOfAnimals", "Food", });
     internal_static_steven_Zoo_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_steven_Zoo_fieldAccessorTable = new

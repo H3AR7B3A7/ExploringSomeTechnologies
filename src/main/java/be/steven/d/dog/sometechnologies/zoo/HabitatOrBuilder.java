@@ -8,32 +8,56 @@ public interface HabitatOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string name = 1;</code>
-   * @return The name.
+   * <code>string habitatName = 1;</code>
+   * @return The habitatName.
    */
-  java.lang.String getName();
+  java.lang.String getHabitatName();
   /**
-   * <code>string name = 1;</code>
-   * @return The bytes for name.
+   * <code>string habitatName = 1;</code>
+   * @return The bytes for habitatName.
    */
   com.google.protobuf.ByteString
-      getNameBytes();
+      getHabitatNameBytes();
 
   /**
-   * <code>int32 crew = 2;</code>
-   * @return The crew.
+   * <code>repeated .steven.Keeper keepers = 2;</code>
    */
-  int getCrew();
+  java.util.List<be.steven.d.dog.sometechnologies.zoo.Keeper> 
+      getKeepersList();
+  /**
+   * <code>repeated .steven.Keeper keepers = 2;</code>
+   */
+  be.steven.d.dog.sometechnologies.zoo.Keeper getKeepers(int index);
+  /**
+   * <code>repeated .steven.Keeper keepers = 2;</code>
+   */
+  int getKeepersCount();
+  /**
+   * <code>repeated .steven.Keeper keepers = 2;</code>
+   */
+  java.util.List<? extends be.steven.d.dog.sometechnologies.zoo.KeeperOrBuilder> 
+      getKeepersOrBuilderList();
+  /**
+   * <code>repeated .steven.Keeper keepers = 2;</code>
+   */
+  be.steven.d.dog.sometechnologies.zoo.KeeperOrBuilder getKeepersOrBuilder(
+      int index);
 
   /**
-   * <code>string cargo = 3;</code>
-   * @return The cargo.
+   * <code>int32 numberOfAnimals = 3;</code>
+   * @return The numberOfAnimals.
    */
-  java.lang.String getCargo();
+  int getNumberOfAnimals();
+
   /**
-   * <code>string cargo = 3;</code>
-   * @return The bytes for cargo.
+   * <code>string food = 4;</code>
+   * @return The food.
+   */
+  java.lang.String getFood();
+  /**
+   * <code>string food = 4;</code>
+   * @return The bytes for food.
    */
   com.google.protobuf.ByteString
-      getCargoBytes();
+      getFoodBytes();
 }

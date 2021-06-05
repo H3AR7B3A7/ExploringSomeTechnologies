@@ -8,25 +8,25 @@ public interface KeeperOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string name = 1;</code>
-   * @return The name.
+   * <code>string keeperName = 1;</code>
+   * @return The keeperName.
    */
-  java.lang.String getName();
+  java.lang.String getKeeperName();
   /**
-   * <code>string name = 1;</code>
-   * @return The bytes for name.
+   * <code>string keeperName = 1;</code>
+   * @return The bytes for keeperName.
    */
   com.google.protobuf.ByteString
-      getNameBytes();
+      getKeeperNameBytes();
 
   /**
-   * <code>.steven.Keeper.Role role = 2;</code>
-   * @return The enum numeric value on the wire for role.
+   * <code>.steven.Keeper.Role keeperRole = 2;</code>
+   * @return The enum numeric value on the wire for keeperRole.
    */
-  int getRoleValue();
+  int getKeeperRoleValue();
   /**
-   * <code>.steven.Keeper.Role role = 2;</code>
-   * @return The role.
+   * <code>.steven.Keeper.Role keeperRole = 2;</code>
+   * @return The keeperRole.
    */
-  be.steven.d.dog.sometechnologies.zoo.Keeper.Role getRole();
+  be.steven.d.dog.sometechnologies.zoo.Keeper.Role getKeeperRole();
 }
