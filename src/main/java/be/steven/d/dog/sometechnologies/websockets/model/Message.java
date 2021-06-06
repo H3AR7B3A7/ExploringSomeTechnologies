@@ -35,7 +35,7 @@ public class Message {
             return this;
         }
 
-        public Message build(){
+        public Message build() {
             return new Message(this);
         }
     }

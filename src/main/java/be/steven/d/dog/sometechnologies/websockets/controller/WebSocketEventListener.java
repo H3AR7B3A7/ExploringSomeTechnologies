@@ -24,12 +24,12 @@ public class WebSocketEventListener {
     }
 
     @EventListener
-    public void handleWebSocketConnectListener(final SessionConnectedEvent event){
+    public void handleWebSocketConnectListener(final SessionConnectedEvent event) {
         LOGGER.info("Someone connected...");
     }
 
     @EventListener
-    public void handleWebSocketDisconnectListener(final SessionDisconnectEvent event){
+    public void handleWebSocketDisconnectListener(final SessionDisconnectEvent event) {
         final StompHeaderAccessor headerAccessor = StompHeaderAccessor.wrap(event.getMessage());
         final String username = (String) headerAccessor.getSessionAttributes().get("username");
         final Message message = new Message.Builder()
