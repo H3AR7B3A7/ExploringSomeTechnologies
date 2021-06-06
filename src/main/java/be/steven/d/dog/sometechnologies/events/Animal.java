@@ -1,4 +1,4 @@
-package be.steven.d.dog.sometechnologies.liquibase;
+package be.steven.d.dog.sometechnologies.events;
 
 import javax.persistence.*;
 import java.time.LocalDate;
