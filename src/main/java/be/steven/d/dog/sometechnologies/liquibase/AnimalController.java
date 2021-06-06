@@ -9,12 +9,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/animal")
-public class Controller {
+public class AnimalController {
 
     private final AnimalRepository animalRepository;
 
     @Autowired
-    public Controller(AnimalRepository animalRepository) {
+    public AnimalController(AnimalRepository animalRepository) {
         this.animalRepository = animalRepository;
     }
 
