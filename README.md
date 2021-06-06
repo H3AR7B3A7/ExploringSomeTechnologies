@@ -66,6 +66,9 @@ a straightforward fashion before output. Although Feign is limited to supporting
 simplifies system aspects such as replaying requests.
 Furthermore, Feign makes it easy to unit test your conversions knowing this.
 
+It is much cleaner than using a RestTemplate, because it separates business logic from the client code,
+making it more readable and reusable.
+
 
 ## Spring Events
 
