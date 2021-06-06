@@ -1,4 +1,4 @@
-package be.steven.d.dog.sometechnologies;
+package be.steven.d.dog.sometechnologies.liquibase;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

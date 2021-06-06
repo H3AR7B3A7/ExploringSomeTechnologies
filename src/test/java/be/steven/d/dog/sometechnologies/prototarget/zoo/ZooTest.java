@@ -1,10 +1,8 @@
-package be.steven.d.dog.sometechnologies.zoo;
+package be.steven.d.dog.sometechnologies.prototarget.zoo;
 
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class ZooTest {
 

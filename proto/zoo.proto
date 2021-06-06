@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package steven;
 
-option java_package = "be.steven.d.dog.sometechnologies.zoo";
+option java_package = "be.steven.d.dog.sometechnologies.prototarget.zoo";
 option java_multiple_files = true;
 
 message Keeper {

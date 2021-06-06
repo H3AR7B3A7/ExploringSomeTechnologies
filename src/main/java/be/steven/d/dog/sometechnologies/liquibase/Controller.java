@@ -1,4 +1,4 @@
-package be.steven.d.dog.sometechnologies;
+package be.steven.d.dog.sometechnologies.liquibase;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;

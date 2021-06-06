@@ -50,6 +50,9 @@ It can efficiently connect services in and across data centers with pluggable su
 health checking and authentication. It is also applicable in last mile of distributed computing to connect devices,
 mobile applications and browsers to backend services.
 
+An RPC is a valid design choice when purely automated operation is more important than evolution and scalability
+(in Internet time and on an Internet scale).
+
 
 ## Feign
 
