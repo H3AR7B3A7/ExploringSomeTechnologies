@@ -28,7 +28,7 @@ public class AnimalController {
         NewAnimalEvent birthEvent = new BirthEvent(this);
         applicationEventPublisher.publishEvent(birthEvent);
 
-        return animalRepository.findByName(name).getName() + " has been born!";
+        return String.format("%s was born on %s!", animalRepository.findByName(name).getName(), LocalDate.now());
     }
 
     @PostMapping("add")
@@ -39,7 +39,7 @@ public class AnimalController {
         NewAnimalEvent arrivalEvent = new ArrivalEvent(this);
         applicationEventPublisher.publishEvent(arrivalEvent);
 
-        return animalRepository.findByName(name).getName() + " was added to zoo successfully on: " + date + "!";
+        return  String.format("%s was added to zoo successfully on: %s!", animalRepository.findByName(name).getName(), date);
     }
 
     @GetMapping
