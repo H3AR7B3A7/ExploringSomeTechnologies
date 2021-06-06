@@ -1,6 +1,5 @@
 package be.steven.d.dog.sometechnologies.grpc.server;
 
-import be.steven.d.dog.sometechnologies.grpc.service.VisitorService;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import org.slf4j.Logger;

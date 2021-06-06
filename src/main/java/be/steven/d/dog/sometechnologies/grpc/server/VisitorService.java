@@ -1,4 +1,4 @@
-package be.steven.d.dog.sometechnologies.grpc.service;
+package be.steven.d.dog.sometechnologies.grpc.server;
 
 import be.steven.d.dog.sometechnologies.prototarget.visitor.Visitor;
 import be.steven.d.dog.sometechnologies.prototarget.visitor.visitorGrpc;
