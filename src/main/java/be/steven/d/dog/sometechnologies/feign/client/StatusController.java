@@ -14,7 +14,7 @@ public class StatusController {
     }
 
     @GetMapping("/status/{name}")
-    public Zoo status(@PathVariable String name){
+    public Zoo status(@PathVariable String name) {
         return zooClient.findZoo(name);
     }
 }

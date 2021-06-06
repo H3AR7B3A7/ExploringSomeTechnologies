@@ -10,7 +10,7 @@ import java.util.Random;
 public class ZooController {
 
     @GetMapping("/zoo/{name}")
-    public Zoo getZoo(@PathVariable String name){
+    public Zoo getZoo(@PathVariable String name) {
         return new Zoo(name, "MyCity", Math.abs(new Random().nextInt()));
     }
 }

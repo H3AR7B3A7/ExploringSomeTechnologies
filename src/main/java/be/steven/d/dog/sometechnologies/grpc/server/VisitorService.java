@@ -12,7 +12,7 @@ public class VisitorService extends visitorGrpc.visitorImplBase {
 
         Visitor.APIResponse.Builder response = Visitor.APIResponse.newBuilder();
 
-        if(username.equals(password)){ // In a real application encrypt and check DB if the result is present
+        if (username.equals(password)) { // In a real application encrypt and check DB if the result is present
             response.setResponseCode(1).setResponseMessage("Welcome " + username);
         } else {
             response.setResponseCode(0).setResponseMessage("Invalid credentials.");

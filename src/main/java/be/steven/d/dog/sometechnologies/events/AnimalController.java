@@ -39,7 +39,7 @@ public class AnimalController {
         NewAnimalEvent arrivalEvent = new ArrivalEvent(this);
         applicationEventPublisher.publishEvent(arrivalEvent);
 
-        return  String.format("%s was added to zoo successfully on: %s!", animalRepository.findByName(name).getName(), date);
+        return String.format("%s was added to zoo successfully on: %s!", animalRepository.findByName(name).getName(), date);
     }
 
     @GetMapping

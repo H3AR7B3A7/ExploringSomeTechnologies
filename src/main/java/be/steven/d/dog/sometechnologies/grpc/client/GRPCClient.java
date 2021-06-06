@@ -13,7 +13,7 @@ public class GRPCClient {
     public static void main(String[] args) {
         ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 1234).usePlaintext().build(); // .useTransportSecurity for real projects
 
-         visitorGrpc.visitorBlockingStub stub = visitorGrpc.newBlockingStub(channel);
+        visitorGrpc.visitorBlockingStub stub = visitorGrpc.newBlockingStub(channel);
 
         Visitor.LoginRequest request = Visitor.LoginRequest.newBuilder().setUsername("admin").setPassword("admin").build();
 
