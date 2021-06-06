@@ -53,6 +53,7 @@ mobile applications and browsers to backend services.
 An RPC is a valid design choice when purely automated operation is more important than evolution and scalability
 (in Internet time and on an Internet scale).
 
+We can use [BloomRPC](https://github.com/uw-labs/bloomrpc) to test our gRPC services.
 
 ## Feign
 
