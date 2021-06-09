@@ -16,5 +16,4 @@ class HabitatTest {
 
         assertEquals(4, habitat.getAttributes().size());
     }
-
 }
