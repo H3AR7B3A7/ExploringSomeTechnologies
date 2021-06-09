@@ -85,6 +85,7 @@ publishers and subscribers, it enables us to modify subscribers without affectin
 
 
 ## Web Sockets
+
 WebSocket is a computer communications protocol, providing full-duplex communication channels over a single TCP connection.
 The WebSocket protocol was standardized by the IETF as RFC 6455 in 2011, and the WebSocket API in Web IDL is being standardized by the W3C.
 
@@ -100,6 +101,13 @@ without being first requested by the client, and allowing messages to be passed 
 In this way, a two-way ongoing conversation can take place between the client and the server.
 The communications are usually done over TCP port number 443 (or 80 in the case of unsecured connections),
 which is beneficial for environments that block non-web Internet connections using a firewall.
+
+
+## Jackson
+
+Jackson is a very popular and efficient java based library to serialize or map java objects to JSON and vice versa.
+It provides various intuitive annotations.  Its developers extol the combination of fast, correct, lightweight,
+and ergonomic attributes of the library.
 
 ---
 *Work in progress...*
