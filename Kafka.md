@@ -69,6 +69,24 @@ In Powershell we run batch files starting with './', while if we use command pro
 > ./kafka-server-start.bat ../../config/server.properties
 
 
+## Architecture
+
+### Kafka In Software Architecture
+
+*A simple representation of Kafka in software architecture:*
+
+![Producer - Kafka - Consumer](img/producer-kafka-consumer.png)
+
+*A more detailed example of Kafka in software architecture (with multiple producers and consumers):*
+
+![Producer - Kafka - Consumer - Details](img/producer-kafka-consumer-details.png)
+
+### Topics
+
+*A consumer group reading multiple partitions (at different offsets) from a topic:*
+![Kafka Topic](img/kafka-topic.png)
+
+
 
 
 
