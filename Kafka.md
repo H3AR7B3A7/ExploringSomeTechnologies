@@ -64,7 +64,7 @@ In Powershell we run batch files starting with './', while if we use command pro
 *We will be using Powershell, for more info on installing, using and configuring Powershell and Windows Terminal go
 [here](https://github.com/H3AR7B3A7/WindowsTerminalAndPowershell).*
 
-### Start Kafka Server
+### Start Kafka Server / Broker
 
 > ./kafka-server-start.bat ../../config/server.properties
 
@@ -87,8 +87,28 @@ In Powershell we run batch files starting with './', while if we use command pro
 ![Kafka Topic](img/kafka-topic.png)
 
 
+## Kafka Through Console
+
+### Create Topic
+
+> ./kafka-topics --create --topic MyTopic -zookeeper localhost:2181 --replication-factor 1 --partitions 1
+
+### Check Topics
+
+> ./kafka-topics --describe --zookeeper localhost:2181
+
+### Create a Console Producer
+
+> ./kafka-console-producer --broker-list localhost:9092 --topic MyTopic
+
+### Create a Console Consumer
+
+> ./kafka-console-consumer --bootstrap-server localhost:9092 --topic MyTopic --from-beginning
 
 
+
+for /R "C:\" %%G in (*.png *.jpg *.jpeg *.gif) do copy "%%G" "C:\allPictures\"
+pause
 
 ---
 *Work in progress*
