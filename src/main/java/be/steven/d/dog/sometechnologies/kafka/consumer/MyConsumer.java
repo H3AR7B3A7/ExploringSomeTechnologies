@@ -30,11 +30,9 @@ public class MyConsumer {
                 ConsumerRecords<String, String> records = consumer.poll(Duration.of(1, ChronoUnit.SECONDS));
 
                 for (ConsumerRecord<String, String> record : records) {
-
                     System.out.println("Record read in KafkaConsumerApp : " + record.value());
                 }
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
