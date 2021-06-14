@@ -107,6 +107,14 @@ In Powershell we run batch files starting with './', while if we use command pro
 
 > ./kafka-console-consumer --bootstrap-server localhost:9092 --topic MyTopic --from-beginning
 
+### Alter a Topic
+
+> ./kafka-topics --zookeeper localhost:2181 --alter --topic MyTopic --partitions 4
+
+### Delete a Topic
+
+> ./kafka-topics --zookeeper localhost:2181 --delete --topic MyTopic
+
 
 ## Kafka Core API
 
