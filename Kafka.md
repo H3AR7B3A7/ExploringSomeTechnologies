@@ -68,6 +68,8 @@ In Powershell we run batch files starting with './', while if we use command pro
 
 > ./kafka-server-start.bat ../../config/server.properties
 
+*We can run multiple brokers by creating multiple server properties files containing different ports and log directories.*
+
 
 ## Architecture
 
@@ -106,9 +108,45 @@ In Powershell we run batch files starting with './', while if we use command pro
 > ./kafka-console-consumer --bootstrap-server localhost:9092 --topic MyTopic --from-beginning
 
 
+## Kafka Core API
 
-for /R "C:\" %%G in (*.png *.jpg *.jpeg *.gif) do copy "%%G" "C:\allPictures\"
-pause
+### Admin API
+
+An API to manage and inspect topics, brokers, and other Kafka objects.
+
+### Producer API
+
+An API which allows us to publish (write) a stream of data to one or more of the named/categorized
+Kafka topics in the cluster.
+
+### Consumer API
+
+An API to subscribe to (read) one or more topics and to process the stream of events produced to them.
+
+### Streams API
+
+An API to implement stream processing applications and microservices.
+It provides higher-level functions to process event streams, including transformations,
+stateful operations like aggregations and joins, windowing, processing based on event-time, and more.
+It reads input from one or more topics in order to generate output to one or more topics,
+effectively transforming the input streams to output streams.
+
+### Connect API
+
+An API to build and run reusable data import/export connectors that consume (read) or produce (write) streams of events
+from and to external systems and applications, so they can integrate with Kafka.
+For example, a connector to a relational database like PostgreSQL might capture every change to a set of tables.
+However, in practice, you typically don't need to implement your own connectors because the Kafka community already
+provides hundreds of ready-to-use connectors.
+
+
+
+
+
+
+
+
+
 
 ---
 *Work in progress*
