@@ -16,6 +16,7 @@ public class MyConsumer {
         properties.put("bootstrap.servers", "localhost:9092");
         properties.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         properties.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+        properties.put("enable.auto.commit", false); // For manual offset management
         properties.put("group.id", "test1");
 
         KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties);
@@ -30,8 +31,14 @@ public class MyConsumer {
                 ConsumerRecords<String, String> records = consumer.poll(Duration.of(1, ChronoUnit.SECONDS));
 
                 for (ConsumerRecord<String, String> record : records) {
-                    System.out.println("Record read in KafkaConsumerApp : " + record.value());
+                    if (record.key() != null && record.key().equals("myKey")){
+                        System.out.println("Record read in KafkaConsumerApp : " + record.value());
+                    } else {
+                        System.out.println("Record read in KafkaConsumerApp : " + record);
+                    }
                 }
+                // Manual offset management - Useful when we want to do some checks first and ensure offset gets updated
+                consumer.commitAsync();
             }
         } catch (Exception e) {
             e.printStackTrace();
