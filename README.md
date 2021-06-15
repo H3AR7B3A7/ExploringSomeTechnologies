@@ -123,15 +123,5 @@ contiguous memory blocks which allows Kafka to turn a bursty stream of random me
 
 More on Kafka [here](Kafka.md).
 
-
-## Google Web Toolkit
-
-Google Web Toolkit is an open-source set of tools that allows web developers to create and maintain JavaScript
-front-end applications in Java. Other than a few native libraries, everything is Java source that can be built
-on any supported platform with the included GWT Ant build files. It is licensed under the Apache License 2.0.
-
-GWT emphasizes reusable approaches to common web development tasks, namely asynchronous remote procedure calls,
-history management, bookmarking, UI abstraction, internationalization, and cross-browser portability.
-
 ---
 *Work in progress...*
