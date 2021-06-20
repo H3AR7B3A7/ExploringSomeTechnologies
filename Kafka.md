@@ -154,8 +154,11 @@ The load on consumers will automatically re-balance when the number of consumers
 
 
 
+### More
 
-
+*For more examples visit these GitHub repositories:*
+- [MichaelHeinecke](https://github.com/MichaelHeinecke/ApacheKafkaForBeginners)
+- [dilipsundarraj1](https://github.com/dilipsundarraj1/TeachApacheKafka)
 
 
 
