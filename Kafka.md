@@ -147,6 +147,10 @@ For example, a connector to a relational database like PostgreSQL might capture 
 However, in practice, you typically don't need to implement your own connectors because the Kafka community already
 provides hundreds of ready-to-use connectors.
 
+### Consumer Group
+
+The load on consumers will automatically re-balance when the number of consumers within the same consumer group changes.
+
 
 
 
