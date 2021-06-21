@@ -88,6 +88,10 @@ In Powershell we run batch files starting with './', while if we use command pro
 *A consumer group reading multiple partitions (at different offsets) from a topic:*
 ![Kafka Topic](img/kafka-topic.png)
 
+### Consumer Group
+
+The load on consumers will automatically re-balance when the number of consumers within the same consumer group changes.
+
 
 ## Kafka Through Console
 
@@ -147,9 +151,58 @@ For example, a connector to a relational database like PostgreSQL might capture 
 However, in practice, you typically don't need to implement your own connectors because the Kafka community already
 provides hundreds of ready-to-use connectors.
 
-### Consumer Group
 
-The load on consumers will automatically re-balance when the number of consumers within the same consumer group changes.
+## Kafka Configurations
+
+### Acks
+
+- **acks=0**:
+  - No response requested from broker to producer
+  - Data will be lost if broker goes offline
+  - Good for performance
+- *acks=1*:
+  - Default
+  - Leader response requested, but replication not a guarantee
+  - The producer will retry if ack not received
+  - Data will be lost if leader goes down and replicas didn't replicate data
+- *acks=all*:
+  - Leader and replica response requested
+  - No data loss, with enough replicas
+  - Added latency
+  - Must be used in conjunction with min.insync.replicas
+
+### Producer Retries
+
+- Default = 0
+- In case of retries, by default order is not guaranteed
+- The max.in.flight.requests.per.connection setting:
+  - Default = 5
+  - Set to 1 this will guarantee order
+  - Kafka versions higher than 1.0.0 have a better solution
+
+### IdemPotent Producer
+
+- Set by producerProps.put("enable.idempotence", true)
+- Prevents duplicate messages due to network errors
+- Defaults:
+  - retries = Integer.MAX_VALUE
+  - max.in.flight.requests = 5 (in >= v1.1), 1 (in < v1.1)
+  - acks = all
+  
+### Producer Compression
+
+- Messages usually exist of JSON (text-based), applying compression is important
+- The compression.type setting
+  - none (default)
+  - gzip
+  - lz4
+  - snappy
+- Smaller requests
+- Faster to transfer over network
+- Better throughput
+- Better disk utilization
+- Compression is more effective the bigger the batch of message sent (more compression & throughput)
+  - Tweak the settings linger.ms and batch.size to have bigger batches
 
 
 
@@ -159,9 +212,6 @@ The load on consumers will automatically re-balance when the number of consumers
 *For more examples visit these GitHub repositories:*
 - [MichaelHeinecke](https://github.com/MichaelHeinecke/ApacheKafkaForBeginners)
 - [dilipsundarraj1](https://github.com/dilipsundarraj1/TeachApacheKafka)
-
-
-
 
 ---
 *Work in progress*
